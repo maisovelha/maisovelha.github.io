@@ -697,6 +697,28 @@ body::before{opacity:.07}
 }
 @media (max-width:640px){#app{padding-top:56px}}
 
+/* ---------- celular do app cabendo inteiro na tela do celular ---------- */
+@media (max-width:640px){
+  #app .phone{width:min(300px,82vw);border-radius:38px;padding:7px;box-shadow:0 0 0 1px #2b322d inset,0 0 0 5px #1a201c,0 30px 60px -30px rgba(17,32,22,.55)}
+  #app .screen{height:560px;height:min(560px,calc(100vh - 150px));height:min(560px,calc(100svh - 150px));min-height:470px;border-radius:31px}
+  #app .notch{width:84px;height:22px;top:8px}
+  #app .app-top{padding:38px 16px 13px}
+  #app .app-top img{height:24px}
+  #app .app-top .hi{margin-top:8px;font-size:12px}
+  #app .app-top .farm{font-size:16.5px}
+  #app .app-body{padding:12px 11px 18px}
+  #app .kpis,#app .herd{gap:8px}
+  #app .kpi{padding:10px}
+  #app .kpi .v{font-size:19px}
+  #app .a-card{padding:12px}
+  #app .app-nav{padding:6px 2px 12px}
+  #app .app-nav button{font-size:9.5px}
+  #app .app-nav button svg{width:20px;height:20px}
+  #app .toast{bottom:78px}
+}
+/* etiqueta do topo em uma linha no notebook */
+@media (min-width:981px){.hero .eyebrow{letter-spacing:.07em;font-size:12px;white-space:nowrap}}
+
 /* ---------- mapa oficial ---------- */
 .map-card{padding:22px}
 #rsmap .pin circle:first-child{filter:drop-shadow(0 2px 3px rgba(17,32,22,.35))}
