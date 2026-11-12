@@ -675,6 +675,31 @@ body::before{opacity:.07}
 .course:hover .cover::after{background-size:46px 46px,auto;opacity:1}
 .course .cover .lock{display:grid;place-items:center;width:30px;height:30px;top:10px;right:10px;border-radius:50%;background:rgba(15,33,19,.6);backdrop-filter:blur(4px);font-size:13px}
 .course .cover .chip{box-shadow:0 2px 8px rgba(0,0,0,.18)}
+
+/* ---------- rótulos das seções com mais destaque ---------- */
+.eyebrow{font-size:14.5px;font-weight:800;letter-spacing:.14em;padding:7px 14px 7px 12px;border-radius:999px;background:var(--accent-soft);color:#21733a;border:1px solid rgba(47,138,67,.18)}
+.eyebrow::before{width:8px;height:8px}
+.band .eyebrow,#diagnostico .eyebrow,.contact .eyebrow,.rev .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(201,163,90,.35);color:var(--gold-2)}
+.rev.light .eyebrow{background:var(--accent-soft);border-color:rgba(47,138,67,.18);color:#21733a}
+.simulator .eyebrow{font-size:13px}
+.hero .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(201,163,90,.35);color:var(--gold-2);font-size:12.5px;padding:6px 14px;width:fit-content;max-width:100%}
+.sec-head .eyebrow+.rule,.eyebrow+.rule{margin-top:16px}
+@media (max-width:640px){.eyebrow{font-size:13px}.hero .eyebrow{font-size:11px;letter-spacing:.1em;line-height:1.4}}
+
+/* ---------- aplicativo em destaque logo após o topo ---------- */
+#app{padding-top:88px}
+@media (max-width:980px){
+  #app .demo{gap:0}
+  #app .demo>.reveal:first-child{display:contents}
+  #app .demo>.reveal:last-child{order:5;margin:28px 0 8px}
+  #app .demo .feat{order:6;margin-top:24px}
+  #app .demo .eyebrow{justify-self:start}
+}
+@media (max-width:640px){#app{padding-top:56px}}
+
+/* ---------- mapa oficial ---------- */
+.map-card{padding:22px}
+#rsmap .pin circle:first-child{filter:drop-shadow(0 2px 3px rgba(17,32,22,.35))}
 </style>
 </head>
 <body>
@@ -683,10 +708,10 @@ body::before{opacity:.07}
   <div class="wrap nav">
     <a href="#inicio" aria-label="+Ovelha, início"><img src="logo-verde.png" alt="+Ovelha — Consultoria em ovinocultura"></a>
     <ul id="menu">
+      <li><a href="#app">Aplicativo</a></li>
       <li><a href="#educacao">Educação</a></li>
       <li><a href="#mercado">Mercado</a></li>
       <li><a href="#mapa">Mapa</a></li>
-      <li><a href="#app">Aplicativo</a></li>
       <li><a href="#consultoria">Consultoria</a></li>
       <li><a href="#planos">Planos</a></li>
       <li><a href="#viabilidade">Modelo de negócio</a></li>
@@ -742,6 +767,68 @@ body::before{opacity:.07}
       <div style="font-size:12px;color:#d6dfd3;margin-top:6px">3 de 6 aulas concluídas</div>
     </div>
   </div>
+  </div>
+</section>
+
+<!-- APP -->
+<section id="app" class="alt">
+  <div class="wrap demo">
+    <div class="reveal">
+      <span class="eyebrow">Aplicativo +Ovelha</span>
+      <div class="rule"></div>
+      <h2>A gestão da propriedade <span class="gold">na palma da mão.</span></h2>
+      <p class="lead" style="margin-top:16px">Para assinantes Gestão + e clientes da consultoria: o rebanho registrado, os indicadores, as aulas e as cotações em um só app. Toque nas funções para navegar.</p>
+      <div class="feat" id="feat">
+        <button data-tab="painel" class="on"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span><span><b>Painel de indicadores</b><small>Prenhez, desmame, mortalidade e peso — antes e depois.</small></span></button>
+        <button data-tab="rebanho"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></span><span><b>Controle do rebanho</b><small>Nascimentos, pesagens, vendas e perdas em segundos.</small></span></button>
+        <button data-tab="plano"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span><b>Plano de ação</b><small>Tarefas e agenda de manejo combinadas com o consultor.</small></span></button>
+        <button data-tab="aulas"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v6c3 2 9 2 12 0V9"/></svg></span><span><b>Aulas</b><small>Continue a trilha de onde parou, até sem sinal.</small></span></button>
+        <button data-tab="mercado"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span><b>Simular venda</b><small>Quanto rende o lote de cordeiros com a cotação do dia.</small></span></button>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="phone">
+        <div class="screen" id="screen">
+          <div class="notch"></div>
+          <div class="app-top">
+            <div class="row"><img src="logo-creme.png" alt="+Ovelha"><span class="pill">Gestão +</span></div>
+            <div class="hi" id="hi">Bom dia, seu João 👋</div>
+            <div class="farm">Estância Santa Clara</div>
+            <div class="a-sub" style="color:#c9d3c6">Bagé · RS · Consultora: Ana Ribeiro</div>
+          </div>
+          <div class="app-body" id="appBody"></div>
+          <nav class="app-nav" id="appNav">
+            <button data-tab="painel" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>Painel</button>
+            <button data-tab="rebanho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 10c-2.5 0-4 1.6-4 3.5S4.5 17 7 17h9c3 0 5-1.8 5-4s-2-4-5-4c-.6-2-2.4-3-4.5-3S8 7.3 7 10z"/><path d="M8 17v3M15 17v3"/></svg>Rebanho</button>
+            <button data-tab="plano"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Plano</button>
+            <button data-tab="aulas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v6c3 2 9 2 12 0V9"/></svg>Aulas</button>
+            <button data-tab="mercado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Mercado</button>
+          </nav>
+          <div class="sheet" id="sheet"><div class="panel">
+            <div class="grab"></div>
+            <div class="a-h" style="font-size:17px;margin-bottom:14px">Registrar evento</div>
+            <label class="field">Tipo de evento
+              <select id="evType">
+                <option value="nasc">Nascimento de cordeiros</option>
+                <option value="peso">Pesagem de cordeiros</option>
+                <option value="venda">Venda de animais</option>
+                <option value="obito">Óbito / perda</option>
+              </select>
+            </label>
+            <label class="field" id="evQtyWrap">Quantidade de animais <input id="evQty" type="number" min="1" value="3" inputmode="numeric"></label>
+            <label class="field" id="evCatWrap" style="display:none">Categoria
+              <select id="evCat"><option value="cordeiros">Cordeiros</option><option value="borregas">Borregas</option><option value="matrizes">Matrizes</option><option value="carneiros">Carneiros</option></select>
+            </label>
+            <label class="field" id="evPesoWrap" style="display:none">Peso médio (kg) <input id="evPeso" type="number" min="1" step="0.1" value="27.5" inputmode="decimal"></label>
+            <button class="a-btn" id="evSave">Salvar registro</button>
+            <button class="a-btn" style="background:transparent;color:var(--green);border:1px solid var(--line);margin:0" id="evCancel">Cancelar</button>
+          </div></div>
+          <div class="toast" id="toast"></div>
+        </div>
+      </div>
+      <p class="demo-note">Propriedade fictícia, dados ilustrativos. <button id="resetDemo">Reiniciar demonstração</button></p>
+    </div>
   </div>
 </section>
 
@@ -820,68 +907,6 @@ body::before{opacity:.07}
       <div class="place" id="place"></div>
     </div>
     <p class="fine">Mapa e cadastros ilustrativos para a demonstração.</p>
-  </div>
-</section>
-
-<!-- APP -->
-<section id="app" class="alt">
-  <div class="wrap demo">
-    <div class="reveal">
-      <span class="eyebrow">Aplicativo +Ovelha</span>
-      <div class="rule"></div>
-      <h2>A gestão da propriedade <span class="gold">na palma da mão.</span></h2>
-      <p class="lead" style="margin-top:16px">Para assinantes Gestão + e clientes da consultoria: o rebanho registrado, os indicadores, as aulas e as cotações em um só app. Toque nas funções para navegar.</p>
-      <div class="feat" id="feat">
-        <button data-tab="painel" class="on"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span><span><b>Painel de indicadores</b><small>Prenhez, desmame, mortalidade e peso — antes e depois.</small></span></button>
-        <button data-tab="rebanho"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></span><span><b>Controle do rebanho</b><small>Nascimentos, pesagens, vendas e perdas em segundos.</small></span></button>
-        <button data-tab="plano"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span><b>Plano de ação</b><small>Tarefas e agenda de manejo combinadas com o consultor.</small></span></button>
-        <button data-tab="aulas"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v6c3 2 9 2 12 0V9"/></svg></span><span><b>Aulas</b><small>Continue a trilha de onde parou, até sem sinal.</small></span></button>
-        <button data-tab="mercado"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span><b>Simular venda</b><small>Quanto rende o lote de cordeiros com a cotação do dia.</small></span></button>
-      </div>
-    </div>
-
-    <div class="reveal">
-      <div class="phone">
-        <div class="screen" id="screen">
-          <div class="notch"></div>
-          <div class="app-top">
-            <div class="row"><img src="logo-creme.png" alt="+Ovelha"><span class="pill">Gestão +</span></div>
-            <div class="hi" id="hi">Bom dia, seu João 👋</div>
-            <div class="farm">Estância Santa Clara</div>
-            <div class="a-sub" style="color:#c9d3c6">Bagé · RS · Consultora: Ana Ribeiro</div>
-          </div>
-          <div class="app-body" id="appBody"></div>
-          <nav class="app-nav" id="appNav">
-            <button data-tab="painel" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>Painel</button>
-            <button data-tab="rebanho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 10c-2.5 0-4 1.6-4 3.5S4.5 17 7 17h9c3 0 5-1.8 5-4s-2-4-5-4c-.6-2-2.4-3-4.5-3S8 7.3 7 10z"/><path d="M8 17v3M15 17v3"/></svg>Rebanho</button>
-            <button data-tab="plano"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Plano</button>
-            <button data-tab="aulas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v6c3 2 9 2 12 0V9"/></svg>Aulas</button>
-            <button data-tab="mercado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Mercado</button>
-          </nav>
-          <div class="sheet" id="sheet"><div class="panel">
-            <div class="grab"></div>
-            <div class="a-h" style="font-size:17px;margin-bottom:14px">Registrar evento</div>
-            <label class="field">Tipo de evento
-              <select id="evType">
-                <option value="nasc">Nascimento de cordeiros</option>
-                <option value="peso">Pesagem de cordeiros</option>
-                <option value="venda">Venda de animais</option>
-                <option value="obito">Óbito / perda</option>
-              </select>
-            </label>
-            <label class="field" id="evQtyWrap">Quantidade de animais <input id="evQty" type="number" min="1" value="3" inputmode="numeric"></label>
-            <label class="field" id="evCatWrap" style="display:none">Categoria
-              <select id="evCat"><option value="cordeiros">Cordeiros</option><option value="borregas">Borregas</option><option value="matrizes">Matrizes</option><option value="carneiros">Carneiros</option></select>
-            </label>
-            <label class="field" id="evPesoWrap" style="display:none">Peso médio (kg) <input id="evPeso" type="number" min="1" step="0.1" value="27.5" inputmode="decimal"></label>
-            <button class="a-btn" id="evSave">Salvar registro</button>
-            <button class="a-btn" style="background:transparent;color:var(--green);border:1px solid var(--line);margin:0" id="evCancel">Cancelar</button>
-          </div></div>
-          <div class="toast" id="toast"></div>
-        </div>
-      </div>
-      <p class="demo-note">Propriedade fictícia, dados ilustrativos. <button id="resetDemo">Reiniciar demonstração</button></p>
-    </div>
   </div>
 </section>
 
@@ -1215,8 +1240,7 @@ function renderMap(){
   $('#mapLegend').innerHTML=Object.entries(TYPES).map(([k,[n,c]])=>`<button data-k="${k}" class="${mapOn.has(k)?'':'off'}"><i style="background:${c}"></i>${n}</button>`).join('');
   document.querySelectorAll('#mapLegend button').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;mapOn.has(k)?mapOn.delete(k):mapOn.add(k);renderMap()}));
   const poly=a=>a.map(proj).map(p=>p.join(',')).join(' ');
-  $('#rsmap').innerHTML=`<polygon points="${poly(RS)}" fill="#e3eadf" stroke="#3f6b44" stroke-width="2" stroke-linejoin="round"/>
-    <polygon points="${poly(LAGOA)}" fill="#f3eee4" stroke="#c4bba8"/>
+  $('#rsmap').innerHTML=`<image href="rs-mapa.svg" x="0" y="0" width="440" height="400"/>
     <text x="95" y="330" font-size="11" fill="#9aa296" font-weight="700" letter-spacing="2">URUGUAI</text>
     <text x="6" y="60" font-size="11" fill="#9aa296" font-weight="700" letter-spacing="2">ARGENTINA</text>
     <text x="300" y="355" font-size="11" fill="#9aa296" font-weight="700" letter-spacing="2">OCEANO</text>
