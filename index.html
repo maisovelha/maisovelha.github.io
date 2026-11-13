@@ -11,15 +11,15 @@
 <meta property="og:title" content="+Ovelha · Conhecimento que transforma a ovinocultura em renda">
 <meta property="og:description" content="Cursos, cotações, gestão do rebanho, mapa da ovinocultura gaúcha e consultoria no campo. + Ovelhas · + Diversificação · + Renda.">
 <meta property="og:url" content="https://maisovelha.github.io/">
-<meta property="og:image" content="https://maisovelha.github.io/og-image.jpg">
-<meta property="og:image:secure_url" content="https://maisovelha.github.io/og-image.jpg">
+<meta property="og:image" content="https://maisovelha.github.io/og-image-v2.jpg">
+<meta property="og:image:secure_url" content="https://maisovelha.github.io/og-image-v2.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Logo +Ovelha sobre ovelhas pastando no pampa gaúcho">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://maisovelha.github.io/og-image.jpg">
+<meta name="twitter:image" content="https://maisovelha.github.io/og-image-v2.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -734,6 +734,162 @@ body::before{opacity:.07}
 /* etiqueta do topo em uma linha no notebook */
 @media (min-width:981px){.hero .eyebrow{letter-spacing:.07em;font-size:12px;white-space:nowrap}}
 
+/* =====================================================================
+   REDESENHO 2 · editorial, vidro e interações leves
+   ===================================================================== */
+:root{--ease:cubic-bezier(.2,.8,.2,1)}
+header{background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}
+.nav ul a.active{color:var(--green)}
+.nav ul a.active::after{transform:scaleX(1)}
+.progress-bar{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,var(--accent),var(--gold-2));transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+
+/* títulos editoriais */
+.kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.kicker b{font-family:"Plus Jakarta Sans",sans-serif;font-size:13.5px;font-weight:800;color:var(--gold);letter-spacing:.06em;min-width:22px}
+.kicker i{display:block;width:46px;height:1.5px;background:linear-gradient(90deg,var(--gold),rgba(201,163,90,0))}
+.band .kicker,#diagnostico .kicker,.contact .kicker{color:#efe8d6}
+.band .kicker b,#diagnostico .kicker b,.contact .kicker b{color:var(--gold-2)}
+section h2,.band h2{font-size:clamp(32px,4.3vw,56px);line-height:1.05;letter-spacing:-.035em;max-width:17ch}
+h2 .gold{color:var(--accent);padding-bottom:.06em;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8.5C40 3 90 2.5 132 5.2c22 1.4 44 3.3 66-.4' fill='none' stroke='%23c9a35a' stroke-width='3.2' stroke-linecap='round'/></svg>") left 100%/100% .26em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.band h2 .gold,#diagnostico h2 .gold,.contact h2 .gold{color:var(--gold-2)}
+.sec-head{margin-bottom:56px}
+.sec-head.v-split{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:end}
+.sec-head.v-split .lead{margin:0 0 6px;padding-left:24px;border-left:2px solid rgba(201,163,90,.55);font-size:17px}
+.sec-head.v-center{text-align:center;display:flex;flex-direction:column;align-items:center}
+.sec-head.v-center h2{margin:0 auto}
+.sec-head.v-center .lead{margin:18px auto 0}
+.sec-head.v-center .kicker{justify-content:center}
+.sec-head.v-center .kicker::after{content:"";display:block;width:46px;height:1.5px;background:linear-gradient(270deg,var(--gold),rgba(201,163,90,0))}
+#app h2{max-width:14ch}
+@media (max-width:900px){.sec-head.v-split{grid-template-columns:1fr;gap:18px}.sec-head.v-split .lead{padding-left:16px}section h2,.band h2{max-width:none}}
+
+/* botões */
+.btn{position:relative;overflow:hidden;isolation:isolate;border-radius:14px;gap:12px;transition:transform .2s var(--ease),box-shadow .25s,background .25s,border-color .25s}
+.btn:has(.ar){padding:12px 12px 12px 22px}
+.btn .ar{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:rgba(255,255,255,.18);transition:transform .35s var(--ease),background .25s}
+.btn .ar svg{width:16px;height:16px}
+.btn:hover .ar{transform:translateX(3px)}
+.btn-ghost .ar{background:var(--accent-soft);color:var(--accent)}
+.btn-primary{background:linear-gradient(180deg,#2c5532 0%,#1d3a20 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 12px 26px -14px rgba(29,58,32,.9)}
+.btn-gold{background:linear-gradient(180deg,#3aa252 0%,#2a8240 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 12px 26px -14px rgba(47,138,67,.95)}
+.btn-primary::after,.btn-gold::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-130%);transition:transform .8s var(--ease)}
+.btn-primary:hover::after,.btn-gold:hover::after{transform:translateX(130%)}
+.hero .btn-primary{background:linear-gradient(180deg,#3aa252 0%,#2a8240 100%)}
+.hero .btn-ghost{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.35)}
+.btn:active{transform:translateY(0) scale(.98)}
+
+/* vidro refinado + brilho que segue o cursor */
+.card,.chart-card,.map-card,.place,.stat-card,.simulator{
+  background:radial-gradient(420px circle at var(--mx,-300px) var(--my,-300px),rgba(47,138,67,.075),transparent 45%),linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,255,255,.66));
+  backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 0 0 1px rgba(29,58,32,.07),0 22px 44px -26px rgba(17,32,22,.32)}
+.card:hover{box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(47,138,67,.18),0 28px 56px -28px rgba(17,32,22,.38)}
+.course{background:#fff}
+.quote-btn{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.7));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.purpose div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-top:1px solid rgba(201,163,90,.55);border-radius:16px;padding:22px 22px 20px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.reveal{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+
+/* faixa de cotações */
+#mercado{padding-top:0}
+.ticker{position:relative;z-index:2;overflow:hidden;margin-bottom:88px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ticker-track{display:flex;width:max-content;animation:tick 48s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.tk{display:flex;align-items:baseline;gap:10px;padding:17px 30px;white-space:nowrap;font-size:14.5px;font-weight:600;color:var(--ink);border-right:1px solid var(--line)}
+.tk b{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tk em{font-style:normal;font-size:12px;font-weight:800;color:var(--gold)}
+.tk em.up{color:#2f8a43}.tk em.down{color:var(--red)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* mapa com dados reais */
+.mapgrid{grid-template-columns:1.15fr .85fr;gap:24px}
+.map-side{display:grid;gap:18px;align-content:start}
+.stat-card{border-radius:var(--radius);padding:24px}
+.stat-card small{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stat-big{display:flex;align-items:baseline;gap:10px;margin:6px 0 6px}
+.stat-big b{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(36px,4vw,46px);font-weight:800;letter-spacing:-.035em;color:var(--green);font-variant-numeric:tabular-nums}
+.stat-big span{font-weight:700;color:var(--muted)}
+.stat-card p{font-size:14px;color:var(--muted)}
+.rank{list-style:none;display:grid;gap:6px;margin-top:16px}
+.rank li{position:relative;display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:center;padding:8px 11px;border-radius:10px;overflow:hidden;font-size:13.5px}
+.rank li s{position:absolute;inset:0 auto 0 0;width:var(--w);background:linear-gradient(90deg,rgba(47,138,67,.2),rgba(47,138,67,.05));border-radius:10px}
+.rank li>*{position:relative}
+.rank li span{font-weight:800;color:var(--gold)}
+.rank li b{font-weight:700;color:var(--ink)}
+.rank li em{font-style:normal;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
+.scale{margin-top:12px}
+.scale>span{font-size:12px;font-weight:700;color:var(--muted)}
+.scale-bar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin:6px 0 4px;box-shadow:inset 0 0 0 1px rgba(29,58,32,.08)}
+.scale-bar i{flex:1}
+.scale-lbl{display:flex;justify-content:space-between}
+.scale-lbl small{font-size:11px;color:var(--muted)}
+.legend-map i{box-shadow:0 0 0 1.5px #13251a}
+#rsmap .pin.sel circle:first-child{stroke-width:3.2}
+@media (max-width:900px){.mapgrid{grid-template-columns:1fr}}
+
+/* aparelho e app com cara de iPhone real */
+.phone{position:relative;background:linear-gradient(150deg,#2b302d 0%,#0d100e 60%,#1b1f1c 100%)}
+.phone::before,.phone::after{content:"";position:absolute;width:3px;border-radius:2px;background:#232825}
+.phone::before{right:-3px;top:170px;height:84px}
+.phone::after{left:-3px;top:140px;height:52px;box-shadow:0 70px 0 #232825}
+.screen{box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.notch{width:98px;height:29px;top:11px;border-radius:20px}
+.statusbar{position:absolute;top:0;left:0;right:0;height:48px;z-index:6;display:flex;justify-content:space-between;align-items:center;padding:4px 30px 0 34px;color:#fff;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;pointer-events:none}
+.sb-ic{display:flex;align-items:center;gap:5px}
+.sb-ic svg{height:10.5px;fill:#fff}
+.batt{position:relative;width:23px;height:11.5px;border:1.4px solid rgba(255,255,255,.85);border-radius:3.5px;padding:1.2px}
+.batt i{display:block;height:100%;width:76%;background:#fff;border-radius:1.5px}
+.batt::after{content:"";position:absolute;right:-4px;top:3px;width:2px;height:3.5px;border-radius:1px;background:rgba(255,255,255,.85)}
+.app-top{padding:54px 18px 14px;background:radial-gradient(120% 90% at 100% 0%,rgba(201,163,90,.22),transparent 55%),linear-gradient(160deg,#1d3a20 0%,#24482a 100%)}
+.who{display:flex;align-items:center;gap:10px;min-width:0}
+.avatar{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#d8b366,#8a6a2a);color:#fff;font-weight:800;font-size:13px;box-shadow:0 0 0 2px rgba(255,255,255,.22)}
+.app-top .hi{margin:0;font-size:12.5px}
+.app-top .farm{font-size:17px}
+.bell{position:relative;flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}
+.bell svg{width:19px;height:19px}
+.bell i{position:absolute;top:-5px;right:-5px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;display:grid;place-items:center;background:#e5533d;border:2px solid #1f3f23;font-style:normal;font-size:10px;font-weight:800}
+.top-chips{display:flex;gap:6px;margin-top:12px;overflow-x:auto;scrollbar-width:none}
+.top-chips::-webkit-scrollbar{display:none}
+.top-chips span{flex:none;font-size:11px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
+.top-chips .pill{background:rgba(201,163,90,.9);border-color:transparent;color:#fff}
+.push{position:absolute;top:10px;left:10px;right:10px;z-index:12;display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border-radius:20px;cursor:pointer;background:rgba(246,246,246,.88);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);box-shadow:0 14px 34px -12px rgba(0,0,0,.4);transform:translateY(-150%);transition:transform .6s var(--ease)}
+.push.show{transform:none}
+.push-ic{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#1d3a20;color:var(--gold-2);font-size:24px;font-weight:900}
+.push>div{flex:1;min-width:0}
+.push-h{display:flex;justify-content:space-between;align-items:baseline}
+.push-h b{font-size:13px;color:#111}
+.push-h small{font-size:11px;color:#888}
+.push p{margin-top:2px;font-size:12.5px;line-height:1.35;color:#222}
+.home-ind{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:120px;height:5px;border-radius:3px;background:#111;opacity:.85;z-index:9;pointer-events:none}
+.app-nav{background:rgba(255,255,255,.84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding-bottom:20px}
+.app-nav button{position:relative;z-index:0;transition:color .2s}
+.app-nav button.on::before{content:"";position:absolute;z-index:-1;top:1px;left:50%;width:46px;height:30px;transform:translateX(-50%);border-radius:12px;background:var(--accent-soft)}
+.app-body button,.quick button{transition:transform .12s}
+.app-body button:active{transform:scale(.96)}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.quick button{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 2px 9px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:10.5px;font-weight:700;color:var(--green)}
+.quick i{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);font-style:normal;font-size:17px}
+.wchart svg{display:block;width:100%;height:78px;margin-top:8px;overflow:visible}
+.wc-h{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.wc-v{font-family:"Plus Jakarta Sans",sans-serif;font-size:21px;font-weight:800;color:var(--green);letter-spacing:-.02em}
+.wc-v em{font-style:normal;font-size:11px;font-weight:800;margin-left:4px}
+.wline{stroke-dasharray:700;stroke-dashoffset:700;animation:drawl 1.6s .15s var(--ease) forwards}
+@keyframes drawl{to{stroke-dashoffset:0}}
+@media (max-width:640px){
+  #app .app-top{padding:44px 14px 11px}
+  #app .statusbar{height:38px;padding:3px 24px 0 26px;font-size:12px}
+  #app .notch{width:80px;height:22px;top:8px}
+  .avatar{width:34px;height:34px;font-size:12px}
+  .bell{width:33px;height:33px}
+  .top-chips{margin-top:9px}
+  .top-chips span{font-size:10px;padding:4px 8px}
+  .quick i{width:30px;height:30px;font-size:15px}
+  .quick button{font-size:9.5px;padding:8px 1px 7px}
+  .home-ind{width:100px;height:4px}
+}
+@media (prefers-reduced-motion:reduce){.ticker-track,.wline{animation:none;stroke-dashoffset:0}.push{transition:none}}
+@media (max-width:640px){.filters{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;scrollbar-width:none}.filters button{flex:none}.tk{padding:14px 22px;font-size:13.5px}.ticker{margin-bottom:64px}}
+
 /* ---------- mapa oficial ---------- */
 .map-card{padding:22px}
 #rsmap .pin circle:first-child{filter:drop-shadow(0 2px 3px rgba(17,32,22,.35))}
@@ -759,6 +915,7 @@ body::before{opacity:.07}
     </button>
   </div>
 </header>
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
@@ -775,7 +932,7 @@ body::before{opacity:.07}
     <h1>Conhecimento que transforma a ovinocultura em <span class="gold">renda.</span></h1>
     <p class="lead" style="margin-top:20px">A +Ovelha reúne cursos, cotações, ferramentas de gestão, um mapa de quem faz a ovinocultura gaúcha e consultoria no campo. Tudo para o produtor enxergar a ovelha como uma oportunidade real de diversificar e fazer a propriedade crescer.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#planos">Criar conta grátis →</a>
+      <a class="btn btn-primary" href="#planos">Criar conta grátis <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       <a class="btn btn-ghost" href="#diagnostico">Diagnóstico da propriedade</a>
     </div>
     <div class="slogan"><span><i>+</i>Ovelhas</span><span><i>+</i>Diversificação</span><span><i>+</i>Renda</span></div>
@@ -811,8 +968,7 @@ body::before{opacity:.07}
 <section id="app" class="alt">
   <div class="wrap demo">
     <div class="reveal">
-      <span class="eyebrow">Aplicativo +Ovelha</span>
-      <div class="rule"></div>
+      <div class="kicker"><b>01</b><i></i><span>Aplicativo +Ovelha</span></div>
       <h2>A gestão da propriedade <span class="gold">na palma da mão.</span></h2>
       <p class="lead" style="margin-top:16px">Para assinantes Gestão + e clientes da consultoria: o rebanho registrado, os indicadores, as aulas e as cotações em um só app. Toque nas funções para navegar.</p>
       <div class="feat" id="feat">
@@ -828,12 +984,15 @@ body::before{opacity:.07}
       <div class="phone">
         <div class="screen" id="screen">
           <div class="notch"></div>
+          <div class="statusbar" aria-hidden="true"><span id="sbTime">9:41</span><span class="sb-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.5 6.5 0 0 1 9.2 0l-1.4 1.4a4.5 4.5 0 0 0-6.4 0zM1 4.4a9.9 9.9 0 0 1 14 0l-1.4 1.4a7.9 7.9 0 0 0-11.2 0z"/></svg><span class="batt"><i></i></span></span></div>
           <div class="app-top">
-            <div class="row"><img src="logo-creme.png" alt="+Ovelha"><span class="pill">Gestão +</span></div>
-            <div class="hi" id="hi">Bom dia, seu João 👋</div>
-            <div class="farm">Estância Santa Clara</div>
-            <div class="a-sub" style="color:#c9d3c6">Bagé · RS · Consultora: Ana Ribeiro</div>
+            <div class="row">
+              <div class="who"><span class="avatar">JS</span><div><div class="hi" id="hi">Bom dia, seu João 👋</div><div class="farm">Estância Santa Clara</div></div></div>
+              <button class="bell" type="button" aria-label="Notificações" onclick="go('plano')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><i>2</i></button>
+            </div>
+            <div class="top-chips"><span>📍 Bagé · RS</span><span>☀️ 24°</span><span>👩‍🌾 Ana Ribeiro</span><span class="pill">Gestão +</span></div>
           </div>
+          <div class="push" id="push" role="status"><span class="push-ic">+</span><div><div class="push-h"><b>+Ovelha</b><small>agora</small></div><p>Lembrete: vacinação contra clostridioses em 18/11 · matrizes e borregas.</p></div></div>
           <div class="app-body" id="appBody"></div>
           <nav class="app-nav" id="appNav">
             <button data-tab="painel" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>Painel</button>
@@ -862,6 +1021,7 @@ body::before{opacity:.07}
             <button class="a-btn" style="background:transparent;color:var(--green);border:1px solid var(--line);margin:0" id="evCancel">Cancelar</button>
           </div></div>
           <div class="toast" id="toast"></div>
+          <div class="home-ind" aria-hidden="true"></div>
         </div>
       </div>
       <p class="demo-note">Propriedade fictícia, dados ilustrativos. <button id="resetDemo">Reiniciar demonstração</button></p>
@@ -874,9 +1034,8 @@ body::before{opacity:.07}
   <video class="bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="proposito.mp4" type="video/mp4"></video>
   <img class="ghost-logo" src="logo-creme.png" alt="">
   <div class="wrap reveal">
-    <span class="eyebrow" style="color:var(--gold-2)">Nosso propósito</span>
-    <div class="rule"></div>
-    <h2>Educar o produtor e mostrar o potencial da ovinocultura gaúcha.</h2>
+    <div class="kicker"><b>—</b><i></i><span>Nosso propósito</span></div>
+    <h2>Educar o produtor e mostrar o potencial da <span class="gold">ovinocultura gaúcha.</span></h2>
     <div class="purpose">
       <div><b>+ Ovelhas</b><p>Conhecimento técnico acessível para criar melhor, do primeiro lote ao rebanho profissional.</p></div>
       <div><b>+ Diversificação</b><p>A ovinocultura como nova fonte de receita, ao lado do gado, da lavoura e das outras atividades da propriedade.</p></div>
@@ -888,11 +1047,10 @@ body::before{opacity:.07}
 <!-- EDUCAÇÃO -->
 <section id="educacao">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Educação</span>
-      <div class="rule"></div>
-      <h2>Aprenda no seu ritmo, <span class="gold">direto do celular.</span></h2>
-      <p class="lead" style="margin-top:14px">Trilhas curtas e práticas, feitas para a realidade do campo gaúcho. O conteúdo introdutório é gratuito; o aprofundamento faz parte dos planos de assinatura.</p>
+    <div class="sec-head v-split reveal">
+      <div><div class="kicker"><b>02</b><i></i><span>Educação</span></div>
+      <h2>Aprenda no seu ritmo, <span class="gold">direto do celular.</span></h2></div>
+      <p class="lead">Trilhas curtas e práticas, feitas para a realidade do campo gaúcho. O conteúdo introdutório é gratuito; o aprofundamento faz parte dos planos de assinatura.</p>
     </div>
     <div class="filters reveal" id="eduFilters">
       <button class="on" data-f="all">Todos</button>
@@ -906,12 +1064,12 @@ body::before{opacity:.07}
 
 <!-- MERCADO -->
 <section id="mercado" class="alt">
+  <div class="ticker" aria-label="Cotações e números do setor"><div class="ticker-track"><span class="tk"><b>Cordeiro</b>R$ 14,50/kg<em class="up">▲ 2,1%</em></span><span class="tk"><b>Ovelha de descarte</b>R$ 8,90/kg<em class="down">▼ 0,2%</em></span><span class="tk"><b>Lã</b>R$ 12,40/kg<em class="up">▲ 1,1%</em></span><span class="tk"><b>Rebanho ovino RS</b>2,68 mi cabeças<em class="">IBGE 2025</em></span><span class="tk"><b>Maior rebanho</b>Sant'Ana do Livramento<em class="">264.133 cab.</em></span><span class="tk"><b>Municípios com ovinos</b>494 de 497<em class="">IBGE</em></span><span class="tk"><b>Cordeiro</b>R$ 14,50/kg<em class="up">▲ 2,1%</em></span><span class="tk"><b>Ovelha de descarte</b>R$ 8,90/kg<em class="down">▼ 0,2%</em></span><span class="tk"><b>Lã</b>R$ 12,40/kg<em class="up">▲ 1,1%</em></span><span class="tk"><b>Rebanho ovino RS</b>2,68 mi cabeças<em class="">IBGE 2025</em></span><span class="tk"><b>Maior rebanho</b>Sant'Ana do Livramento<em class="">264.133 cab.</em></span><span class="tk"><b>Municípios com ovinos</b>494 de 497<em class="">IBGE</em></span></div></div>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Mercado</span>
-      <div class="rule"></div>
-      <h2>Cotações para <span class="gold">vender na hora certa.</span></h2>
-      <p class="lead" style="margin-top:14px">Preços de referência atualizados toda semana. A cotação atual é aberta para todos; o histórico e as análises de comercialização ficam nos planos.</p>
+    <div class="sec-head v-split reveal">
+      <div><div class="kicker"><b>03</b><i></i><span>Mercado</span></div>
+      <h2>Cotações para <span class="gold">vender na hora certa.</span></h2></div>
+      <p class="lead">Preços de referência atualizados toda semana. A cotação atual é aberta para todos; o histórico e as análises de comercialização ficam nos planos.</p>
     </div>
     <div class="market reveal">
       <div class="quotes" id="quotes"></div>
@@ -930,20 +1088,28 @@ body::before{opacity:.07}
 <!-- MAPA -->
 <section id="mapa">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Conexão</span>
-      <div class="rule"></div>
-      <h2>O mapa da <span class="gold">ovinocultura gaúcha.</span></h2>
-      <p class="lead" style="margin-top:14px">Produtores, técnicos parceiros e compradores no mesmo mapa. Quem cria encontra quem compra, quem precisa de apoio encontra quem atende na região.</p>
+    <div class="sec-head v-split reveal">
+      <div><div class="kicker"><b>04</b><i></i><span>Conexão</span></div>
+      <h2>O mapa da <span class="gold">ovinocultura gaúcha.</span></h2></div>
+      <p class="lead">O rebanho real de cada município, com dados oficiais do IBGE, e produtores, técnicos parceiros e compradores no mesmo mapa. Quem cria encontra quem compra.</p>
     </div>
     <div class="mapgrid reveal">
       <div class="map-card">
         <div class="legend-map" id="mapLegend"></div>
-        <svg id="rsmap" viewBox="0 0 440 400" role="img" aria-label="Mapa do Rio Grande do Sul"></svg>
+        <svg id="rsmap" viewBox="0 0 440 400" role="img" aria-label="Mapa do Rio Grande do Sul com o rebanho ovino por município"></svg>
+        <div class="scale"><span>Ovinos por município</span><div class="scale-bar"><i style="background:#eef3ea"></i><i style="background:#d4e6cc"></i><i style="background:#a9cf9c"></i><i style="background:#6fae68"></i><i style="background:#3c8a45"></i><i style="background:#1d5a2a"></i></div><div class="scale-lbl"><small>menos de 1 mil</small><small>mais de 80 mil</small></div></div>
       </div>
-      <div class="place" id="place"></div>
+      <div class="map-side">
+        <div class="stat-card">
+          <small>Rebanho ovino do RS · IBGE 2025</small>
+          <div class="stat-big"><b class="count" data-to="2679974">0</b><span>cabeças</span></div>
+          <p>A Campanha e a Fronteira Oeste concentram o maior rebanho do estado.</p>
+          <ol class="rank"><li><span>1</span><b>Sant'Ana do Livramento</b><em>264.133</em><s style="--w:100.0%"></s></li><li><span>2</span><b>Alegrete</b><em>171.278</em><s style="--w:64.8%"></s></li><li><span>3</span><b>Quaraí</b><em>127.154</em><s style="--w:48.1%"></s></li><li><span>4</span><b>Uruguaiana</b><em>119.937</em><s style="--w:45.4%"></s></li><li><span>5</span><b>Rosário do Sul</b><em>112.213</em><s style="--w:42.5%"></s></li><li><span>6</span><b>Pinheiro Machado</b><em>85.845</em><s style="--w:32.5%"></s></li></ol>
+        </div>
+        <div class="place" id="place"></div>
+      </div>
     </div>
-    <p class="fine">Mapa e cadastros ilustrativos para a demonstração.</p>
+    <p class="fine">Rebanho por município: IBGE, Pesquisa da Pecuária Municipal 2025. Pontos de produtores, técnicos e compradores são ilustrativos.</p>
   </div>
 </section>
 
@@ -952,8 +1118,7 @@ body::before{opacity:.07}
   <div class="wrap">
     <div class="split-c" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center" id="consultSplit">
       <div class="reveal">
-        <span class="eyebrow">Consultoria +Ovelha</span>
-        <div class="rule"></div>
+        <div class="kicker"><b>05</b><i></i><span>Consultoria +Ovelha</span></div>
         <h2>Quando você quer ir além, <span class="gold">vamos até a propriedade.</span></h2>
         <p class="lead" style="margin-top:16px">Acompanhamento técnico e de gestão feito sob medida, coordenando especialistas parceiros quando necessário. Os resultados ficam registrados no aplicativo.</p>
       </div>
@@ -981,9 +1146,8 @@ body::before{opacity:.07}
 <section id="diagnostico">
   <div class="wrap diag-grid">
     <div class="reveal">
-      <span class="eyebrow" style="color:var(--gold-2)">Diagnóstico rápido · grátis</span>
-      <div class="rule"></div>
-      <h2>Como está a gestão da sua propriedade?</h2>
+      <div class="kicker"><b>06</b><i></i><span>Diagnóstico rápido · grátis</span></div>
+      <h2>Como está a gestão da <span class="gold">sua propriedade?</span></h2>
       <p class="lead" style="margin-top:16px">Seis perguntas, um minuto. No fim, você vê um retrato da sua ovinocultura, as prioridades e o caminho da +Ovelha mais indicado para você.</p>
     </div>
     <div class="quiz reveal" id="quiz"></div>
@@ -993,30 +1157,29 @@ body::before{opacity:.07}
 <!-- PLANOS -->
 <section id="planos" class="alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Planos da plataforma</span>
-      <div class="rule"></div>
+    <div class="sec-head v-center reveal">
+      <div class="kicker"><b>07</b><i></i><span>Planos da plataforma</span></div>
       <h2>Comece grátis. <span class="gold">Evolua quando quiser.</span></h2>
-      <p class="lead" style="margin-top:14px">A informação básica do setor é aberta para todos. A assinatura financia a produção contínua de conhecimento e libera as ferramentas de gestão.</p>
+      <p class="lead">A informação básica do setor é aberta para todos. A assinatura financia a produção contínua de conhecimento e libera as ferramentas de gestão.</p>
     </div>
     <div class="grid g3 plans">
       <div class="card reveal">
         <span class="plan-name">ACESSO GRATUITO</span><span class="plan-sub">Conheça a +Ovelha</span>
         <div class="price">R$ 0</div>
         <ul class="feats"><li>Notícias e informações do setor</li><li>Cotações da semana</li><li>Mapa da ovinocultura</li><li>Conteúdos educativos introdutórios</li><li>Diagnóstico rápido da propriedade</li></ul>
-        <a class="btn btn-ghost" href="#contato" data-plan="Gratuito">Criar conta</a>
+        <a class="btn btn-ghost" href="#contato" data-plan="Gratuito">Criar conta <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
       <div class="card reveal hl" data-badge="Mais escolhido para começar">
         <span class="plan-name">APRENDER +</span><span class="plan-sub">Educação e conhecimento</span>
         <div class="price">R$ 19,90<small>/mês</small></div>
         <ul class="feats"><li>Tudo do acesso gratuito</li><li>Biblioteca de conteúdos exclusivos</li><li>Guias e materiais técnicos</li><li>Planilhas básicas de controle</li><li>Histórico de cotações</li><li>Aulas e capacitações introdutórias</li></ul>
-        <a class="btn btn-gold" href="#contato" data-plan="Aprender +">Assinar Aprender +</a>
+        <a class="btn btn-gold" href="#contato" data-plan="Aprender +">Assinar Aprender + <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
       <div class="card reveal">
         <span class="plan-name">GESTÃO +</span><span class="plan-sub">Conhecimento e ferramentas de gestão</span>
         <div class="price">R$ 39,90<small>/mês</small></div>
         <ul class="feats"><li>Tudo do Aprender +</li><li>Cursos completos</li><li>Aplicativo de gestão do rebanho</li><li>Planilhas avançadas de custos</li><li>Indicadores produtivos</li><li>Conteúdos sobre comercialização</li></ul>
-        <a class="btn btn-primary" href="#contato" data-plan="Gestão +">Assinar Gestão +</a>
+        <a class="btn btn-primary" href="#contato" data-plan="Gestão +">Assinar Gestão + <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
     <p class="fine">Valores iniciais para testar a aceitação do mercado. Precisa de acompanhamento no campo? Veja a <a href="#consultoria">consultoria +Ovelha</a>.</p>
@@ -1026,11 +1189,10 @@ body::before{opacity:.07}
 <!-- VIABILIDADE -->
 <section id="viabilidade">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Modelo de negócio</span>
-      <div class="rule"></div>
-      <h2>Duas fontes de receita, <span class="gold">um negócio sustentável.</span></h2>
-      <p class="lead" style="margin-top:14px">A consultoria gera receita pelo atendimento às propriedades. A plataforma gera receita recorrente com as assinaturas, alcança produtores que ainda não contratariam um acompanhamento e traz novos clientes para a consultoria.</p>
+    <div class="sec-head v-split reveal">
+      <div><div class="kicker"><b>08</b><i></i><span>Modelo de negócio</span></div>
+      <h2>Duas fontes de receita, <span class="gold">um negócio sustentável.</span></h2></div>
+      <p class="lead">A consultoria gera receita pelo atendimento às propriedades. A plataforma gera receita recorrente com as assinaturas, alcança produtores que ainda não contratariam um acompanhamento e traz novos clientes para a consultoria.</p>
     </div>
 
     <div class="two-rev reveal">
@@ -1138,9 +1300,8 @@ body::before{opacity:.07}
       <video class="bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="contato.mp4" type="video/mp4"></video>
       <img src="logo-creme.png" alt="" style="position:absolute;right:-80px;top:-30px;width:420px;opacity:.06">
       <div style="position:relative">
-        <span class="eyebrow" style="color:var(--gold-2)">A +Ovelha tem um plano.</span>
-        <div class="rule"></div>
-        <h2>Faça parte da nova <span style="color:var(--gold-2)">ovinocultura gaúcha.</span></h2>
+        <div class="kicker"><b>09</b><i></i><span>A +Ovelha tem um plano</span></div>
+        <h2>Faça parte da nova <span class="gold">ovinocultura gaúcha.</span></h2>
         <p style="margin-top:16px;color:#c9d3c6">Crie sua conta grátis ou peça um diagnóstico da sua propriedade.<br>contato@maisovelha.com.br</p>
       </div>
       <form id="contactForm" style="position:relative">
@@ -1149,7 +1310,7 @@ body::before{opacity:.07}
         <label class="field">Tenho interesse em
           <select id="interest"><option>Gratuito</option><option>Aprender +</option><option>Gestão +</option><option>Consultoria</option></select>
         </label>
-        <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center;border:0">Quero participar</button>
+        <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center;border:0">Quero participar <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
         <p id="contactOk" style="display:none;margin-top:14px;color:var(--gold-2);font-weight:600">Cadastro recebido! (demonstração)</p>
       </form>
     </div>
@@ -1159,7 +1320,7 @@ body::before{opacity:.07}
 <footer>
   <div class="wrap">
     <img src="logo-verde.png" alt="+Ovelha">
-    <span>+Ovelha · Educação, gestão e consultoria em ovinocultura · RS</span>
+    <span>+Ovelha · Educação, Gestão e Consultoria em Ovinocultura · RS</span>
     <span>Projeto Bye Bye Boss</span>
   </div>
 </footer>
@@ -1256,7 +1417,7 @@ document.querySelectorAll('#ranges button').forEach(b=>b.addEventListener('click
 const RS=[[-57.6,-30.18],[-57.1,-29.75],[-56.6,-29.2],[-56,-28.6],[-55.4,-28.1],[-54.6,-27.5],[-53.8,-27.1],[-53,-27.15],[-52,-27.3],[-51.3,-27.6],[-50.6,-28],[-50,-28.7],[-49.72,-29.33],[-50.2,-30],[-50.7,-30.8],[-51.3,-31.3],[-52.1,-32.1],[-52.7,-32.9],[-53.37,-33.74],[-53.5,-33.2],[-53.25,-32.55],[-53.8,-32.2],[-54.2,-31.9],[-54.6,-31.5],[-55.5,-30.9],[-56,-30.6],[-56.45,-30.39],[-57,-30.2]];
 const LAGOA=[[-51.15,-30.15],[-50.85,-30.6],[-51.25,-31.1],[-51.85,-31.7],[-52.1,-32.05],[-51.95,-31.5],[-51.45,-30.75],[-51.25,-30.3]];
 const proj=([lon,lat])=>[((lon+57.9)*52).toFixed(1),((lat*-1-26.9)*57).toFixed(1)];
-const TYPES={produtor:['Produtores','#3f6b44'],tecnico:['Técnicos parceiros','#b0893a'],comprador:['Compradores','#a8432f'],nucleo:['Núcleo +Ovelha','#1d3a20']};
+const TYPES={produtor:['Produtores','#ffffff'],tecnico:['Técnicos parceiros','#e0b04f'],comprador:['Compradores','#c8553a'],nucleo:['Núcleo +Ovelha','#13251a']};
 const PLACES=[
   {t:'nucleo',n:'Núcleo +Ovelha Campanha',c:'Bagé',ll:[-54.1,-31.33],info:['Base da equipe de consultoria','Atendimento na região da Campanha','Dias de campo e capacitações']},
   {t:'produtor',n:'Estância Santa Clara',c:'Bagé',ll:[-54.3,-31.1],info:['120 ovinos · Corriedale e Texel','Cliente da consultoria','Vende cordeiros: nov a fev']},
@@ -1283,10 +1444,10 @@ function renderMap(){
     <text x="300" y="355" font-size="11" fill="#9aa296" font-weight="700" letter-spacing="2">OCEANO</text>
     <text x="300" y="370" font-size="11" fill="#9aa296" font-weight="700" letter-spacing="2">ATLÂNTICO</text>`+
     PLACES.map((p,i)=>{if(!mapOn.has(p.t))return'';const [x,y]=proj(p.ll),c=TYPES[p.t][1],r=p.t==='nucleo'?10:7;
-      return `<g class="pin ${i===sel?'sel':''}" data-i="${i}"><circle cx="${x}" cy="${y}" r="${r}" fill="${c}" stroke="#fff" stroke-width="2"/>${p.t==='nucleo'?`<text x="${x}" y="${+y+4}" text-anchor="middle" font-size="12" font-weight="800" fill="#c9a35a">+</text>`:''}<title>${p.n} · ${p.c}</title></g>`}).join('');
+      return `<g class="pin ${i===sel?'sel':''}" data-i="${i}"><circle cx="${x}" cy="${y}" r="${r}" fill="${c}" stroke="#13251a" stroke-width="2"/>${p.t==='nucleo'?`<text x="${x}" y="${+y+4}" text-anchor="middle" font-size="12" font-weight="800" fill="#c9a35a">+</text>`:''}<title>${p.n} · ${p.c}</title></g>`}).join('');
   document.querySelectorAll('#rsmap .pin').forEach(g=>g.addEventListener('click',()=>{sel=+g.dataset.i;renderMap()}));
   const p=PLACES[sel],[n,c]=TYPES[p.t];
-  $('#place').innerHTML=`<span class="chip" style="background:${c};color:#fff">${n.replace(/s$/,'').replace('Produtore','Produtor')}</span>
+  $('#place').innerHTML=`<span class="chip" style="background:${c};color:${p.t==='produtor'?'#13251a':'#fff'};box-shadow:0 0 0 1px rgba(19,37,26,.25)">${n.replace(/s$/,'').replace('Produtore','Produtor')}</span>
     <h3>${p.n}</h3><div class="loc">📍 ${p.c} · RS</div><ul>${p.info.map(x=>`<li>${x}</li>`).join('')}</ul>
     <button class="btn btn-primary" style="width:100%;justify-content:center;border:0" onclick="pageToast('Mensagem enviada pela plataforma (demonstração)')">Entrar em contato</button>
     <p class="fine" style="text-align:center">Toque nos pontos do mapa para ver outros cadastros.</p>`;
@@ -1331,7 +1492,24 @@ const progress=()=>Math.round(S.tarefas.filter(t=>t.done).length/S.tarefas.lengt
 const views = {
   painel(){
     const ind=[['Taxa de prenhez',72,86,'%'],['Desmame',68,82,'%'],['Peso ao desmame',22,Math.round(S.pesoCordeiro),' kg',35],['Mortalidade cordeiros',18,9,'%']];
+    const pesos=[21.8,22.4,23.1,23.9,24.6,25.2,25.9,S.pesoCordeiro];
+    const mn=Math.min(...pesos)-.6,mx=Math.max(...pesos,28)+.4,W=280,H=70;
+    const px=i=>(i/(pesos.length-1)*W).toFixed(1),py=v=>(H-(v-mn)/(mx-mn)*H).toFixed(1);
+    const ln=pesos.map((v,i)=>`${i?'L':'M'}${px(i)},${py(v)}`).join('');
     return `
+    <div class="quick">
+      <button onclick="openSheetType('peso')"><i>⚖️</i>Pesagem</button>
+      <button onclick="openSheetType('nasc')"><i>🐑</i>Nascimento</button>
+      <button onclick="openSheetType('venda')"><i>💰</i>Venda</button>
+      <button onclick="go('plano')"><i>💉</i>Manejo</button>
+    </div>
+    <div class="a-card wchart">
+      <div class="wc-h"><div><div class="a-sub">Peso médio dos cordeiros</div><div class="wc-v">${S.pesoCordeiro.toFixed(1).replace('.',',')} kg <em class="up">▲ ${(S.pesoCordeiro-pesos[0]).toFixed(1).replace('.',',')} kg</em></div></div><span class="tag">8 meses</span></div>
+      <svg viewBox="0 0 ${W} ${H+6}" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2f8a43" stop-opacity=".28"/><stop offset="1" stop-color="#2f8a43" stop-opacity="0"/></linearGradient></defs>
+        <line x1="0" x2="${W}" y1="${py(28)}" y2="${py(28)}" stroke="#c9a35a" stroke-dasharray="4 4" stroke-width="1.2"/><text x="${W-2}" y="${+py(28)-4}" text-anchor="end" font-size="9" fill="#8a6a2a" font-weight="700">meta 28 kg</text>
+        <path d="${ln}L${W},${H+6}L0,${H+6}Z" fill="url(#wg)"/><path d="${ln}" fill="none" stroke="#2f8a43" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" class="wline"/>
+        <circle cx="${px(pesos.length-1)}" cy="${py(S.pesoCordeiro)}" r="4" fill="#fff" stroke="#2f8a43" stroke-width="2.4"/></svg>
+    </div>
     <div class="kpis">
       <div class="kpi"><div class="v">${total()}</div><div class="l">ovinos no rebanho</div><div class="d up">▲ ${total()-108} desde o início</div></div>
       <div class="kpi"><div class="v">${progress()}%</div><div class="l">do plano de ação concluído</div><div class="d" style="color:var(--gold)">Etapa: Implantar</div></div>
@@ -1439,6 +1617,7 @@ function watch(i){S.aulas[i]=true;save();render();toast('Aula concluída ✓ Pro
 let tt;
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200)}
 function openSheet(){$('#sheet').classList.add('open');syncSheet()}
+function openSheetType(t){$('#evType').value=t;openSheet()}
 function closeSheet(){$('#sheet').classList.remove('open')}
 function syncSheet(){
   const v=$('#evType').value;
@@ -1562,6 +1741,28 @@ function subsChart(){
 
 /* ---------- init ---------- */
 renderCourses();renderQuotes();renderChart();renderMap();render();renderQuiz();calc();subsChart();
+
+/* ---------- interações leves ---------- */
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// relógio da barra de status do app
+const tick=()=>{const d=new Date();$('#sbTime').textContent=d.getHours()+':'+String(d.getMinutes()).padStart(2,'0')};tick();setInterval(tick,30000);
+// barra de progresso de leitura
+const pb=$('#progressBar');
+addEventListener('scroll',()=>{const h=document.documentElement;pb.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight)||0})`},{passive:true});
+// notificação "push" quando o app aparece na tela
+let pushed=false;
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!pushed){pushed=true;setTimeout(()=>{const p=$('#push');p.classList.add('show');setTimeout(()=>p.classList.remove('show'),5200)},1400)}}),{threshold:.5}).observe($('#screen'));
+$('#push').addEventListener('click',()=>{$('#push').classList.remove('show');go('plano')});
+// contadores animados
+const countIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;countIO.unobserve(e.target);const el=e.target,to=+el.dataset.to,t0=performance.now(),dur=reduce?0:1600;
+  const step=t=>{const k=dur?Math.min(1,(t-t0)/dur):1,v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=v.toLocaleString('pt-BR');if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.4});
+document.querySelectorAll('.count').forEach(el=>countIO.observe(el));
+// brilho que acompanha o cursor nos cards
+if(matchMedia('(hover:hover)').matches){document.addEventListener('pointermove',e=>{const c=e.target.closest('.card,.chart-card,.map-card,.stat-card,.place,.quiz,.simulator');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true})}
+// menu marca a seção atual
+const links=[...document.querySelectorAll('#menu a')];
+const navIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+links.forEach(a=>{const s=document.querySelector(a.getAttribute('href'));if(s)navIO.observe(s)});
 </script>
 </body>
 </html>
